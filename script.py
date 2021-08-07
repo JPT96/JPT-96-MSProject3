@@ -126,6 +126,21 @@ def anounc_eve(event_type,metadata={}):
 
 def anounc_nothing(event_type,metadata={}):
     pass   
+#creating Ai shooting now
+
+def ai_shooting(gaming_board):
+    x = random.randint(0, gaming_board.width - 1)
+    y = random.randint(0, gaming_board.height -1)
+    return(x,y)
+#person shooting now
+def person_shooting(gaming_board):
+    h_shot= input("Where Now Commander?\n")
+    xstr, ystr = h_shot.split(",")
+    x= int(xstr)
+    y = int(ystr)
+
+    return(x,y)
+    
 
 
 

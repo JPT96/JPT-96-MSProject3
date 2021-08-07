@@ -1,7 +1,11 @@
 class battleship(object):
+    @staticmethod
+    def build(head, length, direction):
+        body= []
 
     def __init__(self,body):
         self.body = body
+b = battleship.build((1,1),3,"S")        
 def board_h_w (board_width, board_height, shots):
     header_bottom = print("+" + "-" * board_width + "+")
     print("+" + "-" * board_width + "+")

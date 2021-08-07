@@ -140,8 +140,15 @@ def person_shooting(gaming_board):
     y = int(ystr)
 
     return(x,y)
-    
 
+def game (anounc_f,res_f):
+    battleships = [
+        battleship.structure((1,1),4,"N"),
+        battleship.structure((9,9),3,"N"),
+        battleship.structure((4,5),5,"E"),
+        battleship.structure((3,2),4,"S"),
+    ]
+    
 
 
 

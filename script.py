@@ -5,6 +5,13 @@ class battleship(object):
         for i in range (length):
             if direction == "N":
                 element = (head[0], head[1] - i) 
+            elif direction == "S":
+                element = (head[0], head[1] + i)
+            elif direction == "W":
+                element = (head[0] -i, head[1])
+            elif direction == "E":
+                element = (head[0] +i,head[1])
+                            
 
 
     def __init__(self,body):

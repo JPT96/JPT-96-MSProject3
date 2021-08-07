@@ -5,7 +5,10 @@ def board_h_w (board_width, board_height, shots):
         row = []
         for x in range(board_width):
             if (x,y) in shots:
-                row.append("X")
+                sh = "X"
+                else:
+                    sh = " "
+                row.append(sh)
         print("¦" + " " * board_width)
     header_bottom = print("+" + "-" * board_width + "+")
 if __name__ == "__main__":

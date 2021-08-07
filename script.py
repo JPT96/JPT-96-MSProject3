@@ -85,7 +85,27 @@ def basics (gaming_board,reveal_battleships=False):
                 elif b.drection == "E":
                     char ("<","=",">") 
                 else:
-                    raise "invaild placement"               
+                    raise "invaild placement"    
+
+                if i ==0:
+                    ch = char[0]
+                elif i == len(b.body) - 1:
+                    ch = char[2]
+                else:
+                    ch = char[1]
+                board[x][y] = ch                      
+# add the shooting now
+
+for sh in gaming_board.shots:
+    x, y = sh.location
+    if sh.is_hit:
+        ch = "X"
+    else:
+        ch = "O"
+        board[x][y] = ch
+for y in range (gaming_board.height):
+    row[]
+
 
 
 

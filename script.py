@@ -8,6 +8,7 @@ class gaming_board(object):
         self.width = width
         self.height = height
         self.shots = []
-        
 
+def shoot_shot(self,shot_loc):
+    
 

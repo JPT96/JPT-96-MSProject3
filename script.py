@@ -67,6 +67,14 @@ class players(object):
 
 def basics (gaming_board,reveal_battleships=False):
     header_footer = "+" + "-" * gaming_board.width + "+"
+    print(header_footer)
+# creating empty board
     
+    board = []
+    for _ in range(gaming_board.width):
+        board.append([None for _ in range (gaming_board.height)])
+    if 
+
+
 
 

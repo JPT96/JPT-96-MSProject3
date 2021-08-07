@@ -52,6 +52,10 @@ def __init__(self,body,direction):
     self.direction = direction
     self.hits = [False] * len(body)
 def body_index(self,loc):
-    
+    try:
+        return self.body.index(loc)
+    except ValueError:
+        return None    
+
 
 

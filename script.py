@@ -19,8 +19,8 @@ class battleship(object):
         self.body = body
 b = battleship.build((1,1),3,"S")        
 def board_h_w (board_width, board_height, shots):
-    header_bottom = print("+" + "-" * board_width + "+")
-    print("+" + "-" * board_width + "+")
+    header_bottom = ("+" + "-" * board_width + "+")
+    print(header_bottom)
     shots_set = set(shots)
     for y in range (board_height):
         row = []
@@ -32,8 +32,17 @@ def board_h_w (board_width, board_height, shots):
                 row.append(sh)
         print ("|" + "".join(row) + "|")        
         print("|" + " " * board_width)
-    header_bottom = print("+" + "-" * board_width + "+")
+    print(header_bottom)
 if __name__ == "__main__":
+    battleships = [
+        battleship.build((3,4),2,"N"),
+        battleship.build((4,8),4,"N"),
+        battleship.build((1,1),5,"E"),
+        battleship.build((1,1),4,"W")
+    ]     
+
+
+
     shots = []
     while True:
 

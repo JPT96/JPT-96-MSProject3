@@ -59,6 +59,6 @@ def body_index(self,loc):
 
 def is_sunk (self):
     return all (self.hits)
-    
-
+  
+class players()
 

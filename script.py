@@ -12,7 +12,7 @@ class battleship(object):
             elif direction == "E":
                 element = (head[0] +i,head[1])
             body.append(element)
-        return body                   
+        return battleship(body)                  
 
 
     def __init__(self,body):

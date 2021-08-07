@@ -141,8 +141,8 @@ def person_shooting(gaming_board):
 
     return(x,y)
 
-def game (anounc_f,res_f):
-    battleships=[
+def Game (anounc_f, res_f):
+    battleships = [
         battleship.structure((1,1),4,"N"),
         battleship.structure((9,9),3,"N"),
         battleship.structure((4,5),5,"E"),
@@ -162,6 +162,22 @@ while True:
 
     def_board = game_board[def_index]
     atk_player = players[atk_index]
+
+    anounc_f("New Turn",{"players":atk_player.name})
+    shot_loc = atk_player.shot_fir(def_board)
+
+    dmg_battleship = def_board.shoot_shot(shot_loc)
+    if dmg_battleship is None:
+        anounc_f("Whiff", {"player":atk_player.name})
+    else:
+        if dmg_battleship.is_sunk():
+            anounc_f("battleShip_sunk",{"player": atk_player.name})
+        else:
+            anounc_f("battleship_hit", {"player":atk_player.name})
+    res_f(def_board)
+    
+
+
 
 
 

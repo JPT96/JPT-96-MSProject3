@@ -10,5 +10,14 @@ class gaming_board(object):
         self.shots = []
 
 def shoot_shot(self,shot_loc):
-    
+    dmg_battleship = None
+    is_hit = False 
+    for b in self.battleships:
+        index = b.body_index(shot_loc)
+        if index is not None:
+            is_hit = True
+            b.hits[index] = True
+            dmg_battleship = b
+            break
+
 

@@ -65,5 +65,8 @@ class players(object):
         self.name = name
         self.shot_fir = shot_fir
 
-        
+def basics (gaming_board,reveal_battleships=False):
+    header_footer = "+" + "-" * gaming_board.width + "+"
+    
+
 

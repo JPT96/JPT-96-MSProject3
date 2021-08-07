@@ -3,7 +3,7 @@ import random
 import copy
 
 class gaming_board(object):
-    def __init__(self,battleships,width,height):
+    def __init__(self, battleships,width,height):
         self.battleships = battleships
         self.width = width
         self.height = height
@@ -141,7 +141,7 @@ def person_shooting(gaming_board):
 
     return(x,y)
 
-def Game (anounc_f, res_f):
+def run(announce_f, render_f):
     battleships = [
         battleship.structure((1,1),4,"N"),
         battleship.structure((9,9),3,"N"),
@@ -149,7 +149,7 @@ def Game (anounc_f, res_f):
         battleship.structure((3,2),4,"S"),
     ]
 game_board = [
-    gaming_board(battleships,10,10),
+    gaming_board((battleships),10,10),
     gaming_board(copy.deepcopy(battleships),10,10)
 ]    
 players = [
@@ -163,19 +163,25 @@ while True:
     def_board = game_board[def_index]
     atk_player = players[atk_index]
 
-    anounc_f("New Turn",{"players":atk_player.name})
+    announce_f("New Turn",{"players":atk_player.name})
     shot_loc = atk_player.shot_fir(def_board)
 
     dmg_battleship = def_board.shoot_shot(shot_loc)
     if dmg_battleship is None:
-        anounc_f("Whiff", {"player":atk_player.name})
+        announce_f("Whiff", {"player":atk_player.name})
     else:
         if dmg_battleship.is_sunk():
-            anounc_f("battleShip_sunk",{"player": atk_player.name})
+            announce_f("battleship_sunk",{"player": atk_player.name})
         else:
-            anounc_f("battleship_hit", {"player":atk_player.name})
+            announce_f("battleship_hit", {"player":atk_player.name})
     res_f(def_board)
-    
+    if def_board.game_finished():
+        announce_f("Game_Over",{"player": atk_player.name})
+        break
+    atk_player = def_index  
+if __name__ =="__main__":
+    run(anounc_eve, basics)     
+
 
 
 

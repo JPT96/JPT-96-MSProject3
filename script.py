@@ -110,7 +110,8 @@ def basics (gaming_board,reveal_battleships=False):
             print("|"+"".join(row)+"|")
         print(header_footer)        
 
-
+def anounc_eve(event_type,metadata={}):
+    
 
 
 

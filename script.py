@@ -142,12 +142,23 @@ def person_shooting(gaming_board):
     return(x,y)
 
 def game (anounc_f,res_f):
-    battleships = [
+    battleships=[
         battleship.structure((1,1),4,"N"),
         battleship.structure((9,9),3,"N"),
         battleship.structure((4,5),5,"E"),
         battleship.structure((3,2),4,"S"),
     ]
+game_board = [
+    gaming_board(battleships,10,10),
+    gaming_board(copy.deepcopy(battleships),10,10)
+]    
+players = [
+    players ("Chris", ai_shooting ),
+    players ("Liam", ai_shooting),
+]
+atk_index = 0
+while True:
+    def_index = (atk_index +1) %2
     
 
 

@@ -124,7 +124,8 @@ def anounc_eve(event_type,metadata={}):
     else:
         print("WHO Knows what just happened: %s" % event_type)
 
-def a   
+def anounc_nothing(event_type,metadata={}):
+    pass   
 
 
 

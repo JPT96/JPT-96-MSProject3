@@ -1,3 +1,5 @@
-shoot = input("Orders Commander?")
+shoot = input("Orders Commander?\n")
 print(shoot)
 xstr, ystr = shoot.split(",")
+x = int(xstr)
+y = (ystr)

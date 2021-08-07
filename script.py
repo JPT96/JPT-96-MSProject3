@@ -111,7 +111,21 @@ def basics (gaming_board,reveal_battleships=False):
         print(header_footer)        
 
 def anounc_eve(event_type,metadata={}):
-    
+    if event_type == "Game_Over":
+        print("%s Wins The Game" % metadata["Player"])
+    elif event_type =="New_Turn":
+        print("%s Your Turn" % metadata ["Player"])
+    elif event_type == "Miss":
+        print("%s Whiffed" % metadata["Player"])
+    elif event_type == "battleship_sunk":
+        print("%s Sunk a BattleShip" % metadata ["Player"])
+    elif event_type == "battleship_hit":
+        print("%s Pinged a boat" % metadata ["Player"])
+    else:
+        print("WHO Knows what just happened: %s" % event_type)
+
+def a   
+
 
 
 

@@ -22,5 +22,8 @@ def shoot_shot(self,shot_loc):
     
     self.shots.append(shot(shot_loc, is_hit))
     return dmg_battleship
+def game_finished(self):
+    return all ([b.is_sunk() for b in self.battleships])    
     
-
+class shot(object):
+    def __init__    

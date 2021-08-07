@@ -47,5 +47,11 @@ class battleship(object):
             body.append(element)  
         return battleship(body,direction)    
 
-def __init__()       
+def __init__(self,body,direction):
+    self.body = body
+    self.direction = direction
+    self.hits = [False] * len(body)
+def body_index(self,loc):
+    
+
 

@@ -26,4 +26,8 @@ def game_finished(self):
     return all ([b.is_sunk() for b in self.battleships])    
     
 class shot(object):
-    def __init__    
+    def __init__(self,location,is_hit):
+        self.location = location
+        self.is_hit = is_hit
+
+class battleship(object)    

@@ -159,7 +159,9 @@ players = [
 atk_index = 0
 while True:
     def_index = (atk_index +1) %2
-    
+
+    def_board = game_board[def_index]
+    atk_player = players[atk_index]
 
 
 

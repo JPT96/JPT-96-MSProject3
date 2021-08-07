@@ -73,7 +73,19 @@ def basics (gaming_board,reveal_battleships=False):
     board = []
     for _ in range(gaming_board.width):
         board.append([None for _ in range (gaming_board.height)])
-    if 
+    if reveal_battleships:
+        for b in gaming_board.battleships:
+            for i, in (x, y) in enumerate(b.body):
+                if b.direction == "N":
+                    char = ("v","|", "^")
+                elif b.direction == "S":
+                    char = ("^","|","v")
+                elif b.direction =="W":
+                    char (">","=","<")
+                elif b.drection == "E":
+                    char ("<","=",">") 
+                else:
+                    raise "invaild placement"               
 
 
 

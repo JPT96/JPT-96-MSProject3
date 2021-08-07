@@ -44,5 +44,6 @@ class battleship(object):
                 element = (tip[0]+i, tip [1])   
             elif direction == "W":
                 element = (tip[0],tip[1]+i)
-            body.append(element)         
+            body.append(element)  
+        return battleship(length,direction)           
 

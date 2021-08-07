@@ -32,5 +32,17 @@ class shot(object):
 
 class battleship(object):
     @staticmethod
-    def structure(top,length,direction):
-        body=[]   
+    def structure(tip,length,direction):
+        body=[]
+        for i in range(length):
+            if direction == "S":
+
+                element = (tip[0],tip[1] +i)
+            elif direction == "N":
+                element = (tip[0],tip[1] -i)
+            elif direction == "E":
+                element = (tip[0]+i, tip [1])   
+            elif direction == "W":
+                element = (tip[0],tip[1]+i)
+            body.append(element)         
+

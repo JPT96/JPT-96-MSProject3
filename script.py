@@ -75,7 +75,7 @@ def basics (gaming_board,reveal_battleships=False):
         board.append([None for _ in range (gaming_board.height)])
     if reveal_battleships:
         for b in gaming_board.battleships:
-            for i, in (x, y) in enumerate(b.body):
+            for i, (x, y) in enumerate(b.body):
                 if b.direction == "N":
                     char = ("v","|", "^")
                 elif b.direction == "S":
@@ -96,15 +96,19 @@ def basics (gaming_board,reveal_battleships=False):
                 board[x][y] = ch                      
 # add the shooting now
 
-for sh in gaming_board.shots:
-    x, y = sh.location
-    if sh.is_hit:
-        ch = "X"
-    else:
-        ch = "O"
-        board[x][y] = ch
-for y in range (gaming_board.height):
-    row[]
+        for sh in gaming_board.shots:
+            x, y = sh.location
+            if sh.is_hit:
+                ch = "X"
+        else:
+            ch = "O"
+            board[x][y] = ch
+        for y in range (gaming_board.height):
+            row=[]
+            for x in range (gaming_board.width):
+                row.append(board[x][y] or " ")
+            print("|"+"".join(row)+"|")
+        print(header_footer)        
 
 
 

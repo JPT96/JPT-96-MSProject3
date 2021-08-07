@@ -30,4 +30,7 @@ class shot(object):
         self.location = location
         self.is_hit = is_hit
 
-class battleship(object)    
+class battleship(object):
+    @staticmethod
+    def structure(top,length,direction):
+        body=[]   

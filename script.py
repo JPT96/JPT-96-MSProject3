@@ -57,5 +57,8 @@ def body_index(self,loc):
     except ValueError:
         return None    
 
+def is_sunk (self):
+    return all (self.hits)
+    
 
 

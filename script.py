@@ -19,5 +19,8 @@ def shoot_shot(self,shot_loc):
             b.hits[index] = True
             dmg_battleship = b
             break
-
+    
+    self.shots.append(shot(shot_loc, is_hit))
+    return dmg_battleship
+    
 

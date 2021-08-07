@@ -60,5 +60,10 @@ def body_index(self,loc):
 def is_sunk (self):
     return all (self.hits)
   
-class players()
+class players(object):
+    def __init__(self, name, shot_fir):
+        self.name = name
+        self.shot_fir = shot_fir
+
+        
 

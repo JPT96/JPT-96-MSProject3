@@ -2,6 +2,10 @@ class battleship(object):
     @staticmethod
     def build(head, length, direction):
         body= []
+        for i in range (length):
+            if direction == "N":
+                element = (head[0], head[1] - i) 
+
 
     def __init__(self,body):
         self.body = body

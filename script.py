@@ -13,12 +13,19 @@ def grid_layout (grid):
 print(grid_layout)    
 
 def rand_row(board):
-    return randint (0,len(board) -1)
+    return randint(0,len(board) -1)
 def rand_coll(board):
-    return randint (0,len(board[0]) -1) 
+    return randint(0,len(board[0]) -1) 
 
 boat_row = rand_row
 boat_coll = rand_coll
 
 target_row = int(input("Target The Row:"))
 target_coll = int(input("Target The Collum:"))
+print (boat_coll)
+print(boat_row)
+
+if target_row == boat_row and target_coll == target_coll:
+    print("Your Sub Is Sleeping With The Fishes!")
+else:
+    print("You Whiffed Try Again!")

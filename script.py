@@ -16,3 +16,6 @@ def rand_row(board):
     return randint (0,len(board) -1)
 def rand_coll(board):
     return randint (0,len(board) -1) 
+
+boat_row = rand_row
+boat_coll = rand_coll

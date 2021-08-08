@@ -25,6 +25,8 @@ target_coll = int(input("Target The Collum:"))
 print (boat_coll)
 print(boat_row)
 
+for turn in range(4):
+    print("Turn", turn + 1)
 if target_row == boat_row and target_coll == target_coll:
     print("Your Sub Is Sleeping With The Fishes!")
 else:

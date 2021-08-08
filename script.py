@@ -28,4 +28,9 @@ print(boat_row)
 if target_row == boat_row and target_coll == target_coll:
     print("Your Sub Is Sleeping With The Fishes!")
 else:
-    print("You Whiffed Try Again!")
+    if target_row > range(5) or target_coll > range(5):
+        print("Where Are You Aiming?")
+    else:    
+        print("You Whiffed Try Again!")
+        grid[target_coll][target_row]="X"
+        grid_layout(grid)

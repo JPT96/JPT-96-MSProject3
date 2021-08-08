@@ -19,3 +19,6 @@ def rand_coll(board):
 
 boat_row = rand_row
 boat_coll = rand_coll
+
+target_row = int(input("Target The Row:"))
+target_coll = int(input("Target The Collum:"))

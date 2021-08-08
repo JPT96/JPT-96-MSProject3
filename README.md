@@ -11,7 +11,8 @@ The design is very basic it sits within five lists essentially filled with O's t
 there has been code put in to determine wether it was a hit, miss, off the board, or already been shot at the same locaation.
 
 ### Future Features
-I would like the player to put down Boats and be able to play between two players.
+I would like the player to put down Boats and be able to play between two players. Potentially an AI function so you can see two ai's fighting it out.
+being able to create your own custome boats would be a nice update as well.
 ## Technologies used
 [python3]<https://en.wikipedia.org/wiki/Python_(programming_language)>
 ## Testing

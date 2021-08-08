@@ -1,3 +1,4 @@
+from random import randint
 import time
 import random
 
@@ -11,3 +12,6 @@ def grid_layout (grid):
         " ".join(row)
 print(grid_layout)    
 
+def rand_row(board):
+    return randint (0,len(board) -1)
+    

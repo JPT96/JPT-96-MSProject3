@@ -45,55 +45,49 @@ class deck:
 # player/dealer making process
 
 class player_dealer:
-    def __init__(self,dealer,deck):
-
+    def __init__(self, isDealer, deck):
         self.cards = []
-        self.dealer = dealer
+        self.isDealer = isDealer
         self.deck = deck
-        self.score = 0 
+        self.score = 0
 
-# a hit function
-     
-    def hit (self):
-
+    def hit(self):
         self.cards.extend(self.deck.draw(1))
         self.score_checker()
-        if self.score ==21:
-            return 1 
+        if self.score > 21:
+            return 1
         return 0
 
-#a deal function
-
-    def deal (self):
+    def deal(self):
         self.cards.extend(self.deck.draw(2))
         self.score_checker()
         if self.score == 21:
             return 1
         return 0
 
-    # score checker function
-
-
     def score_checker(self):
-        ace_counter = 0 
+        a_counter = 0
         self.score = 0
-        for cards in self.cards:
-            if card.cost() == 11:
-                ace_counter += 1
-            self.score += card.cost()
-        while ace_counter !=0 and self.score >21:
-            ace_counter -=1
-            self.score -=10
-        return self.score    
-    
-    def reveal(self):
-        if self.dealer:
-            print("Dealers Cards")
+        for card in self.cards:
+            if card.price() == 11:
+                a_counter += 1
+            self.score += card.price()
+
+        while a_counter != 0 and self.score > 21:
+            a_counter -= 1
+            self.score -= 10
+        return self.score
+
+    def show(self):
+        if self.isDealer:
+            print("Dealer's Cards")
         else:
-            print("Players Cards")
+            print("Player's Cards")
+
         for i in self.cards:
             i.show()
-    print("Score :" + str(self.score))
+
+        print("Score: " + str(self.score))
 
 
 class the_game():
@@ -112,5 +106,5 @@ class the_game():
         if dealer_status ==1:
             print("IT'S A BLACK JACK DRAW!!!")
         return 1
-        
+
                     

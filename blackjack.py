@@ -22,29 +22,31 @@ class card:
            return 11
         return self.price 
 #deck making process
-    class deck:
-        def __init__ (self):
-            self.cards = []
+class deck:
+
+    def __init__ (self):
+        self.cards = []
         
-        def full_deck(self):
-            for i in range(1,14):
-                for x in range(4):
-                    self.cards.append(card(i,x))
+    def full_deck(self):
+        for i in range(1,14):
+            for x in range(4):
+                self.cards.append(card(i,x))
 
-        def draw (self,iteration):
-            cards = []
-            for i in range(iteration):
-                card = random.choice(self.cards)
-                self.cards.remove(card)
-                cards.append(card)
+    def draw (self,iteration):
+        cards = []
+        for i in range(iteration):
+            card = random.choice(self.cards)
+            self.cards.remove(card)
+            cards.append(card)
 
-        def counter(self):
-            return len(self.cards)
+    def counter(self):
+        return len(self.cards)
 
 # player/dealer making process
 
 class player_dealer:
     def __init__(self,dealer,deck):
+
         self.cards = []
         self.dealer = dealer
         self.deck = deck
@@ -53,6 +55,7 @@ class player_dealer:
 # a hit function
      
     def hit (self):
+
         self.cards.extend(self.deck.draw(1))
         self.score_checker()
         if self.score ==21:
@@ -90,4 +93,18 @@ class player_dealer:
             print("Players Cards")
         for i in self.cards:
             i.show()
-        print("Score :" + str(self.score))
+    print("Score :" + str(self.score))
+
+
+class the_game():
+    def __init__(self):
+        self.deck = deck()
+        self.deck.full_deck()
+        self.dealer = player_dealer(True, self.deck)
+        self.player = player_dealer(False, self.deck)
+    
+    def round(self):
+        player_status = self.player.deal()
+        dealer_status = self.dealer.deal()
+        
+                    

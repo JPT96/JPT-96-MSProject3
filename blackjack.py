@@ -67,3 +67,18 @@ class player_dealer:
         if self.score == 21:
             return 1
         return 0
+
+    # score checker function
+
+
+    def score_checker(self):
+        ace_counter = 0 
+        self.score = 0
+        for cards in self.cards:
+            if card.cost() == 11:
+                ace_counter += 1
+            self.score += card.cost()
+        while ace_counter !=0 and self.score >21:
+            ace_counter -=1
+            self.score -=10
+        return self.score    

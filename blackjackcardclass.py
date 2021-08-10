@@ -1,3 +1,5 @@
+import random
+
 class card:
     def __init__(self,value,suit):
         self.price = value
@@ -28,4 +30,12 @@ class card:
             for i in range(1,14):
                 for x in range(4):
                     self.cards.append(card(i,x))
+
+        def draw (self,iteration):
+            cards = []
+            for i in  range(iteration):
+                card = random.choice(self.cards)
+                self.cards.remove(card)
+                cards.append(card)
+
         

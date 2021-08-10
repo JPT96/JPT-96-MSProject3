@@ -49,6 +49,7 @@ class player_dealer:
         self.dealer = dealer
         self.deck = deck
         self.score = 0 
+
 # a hit function
      
     def hit (self):
@@ -56,4 +57,13 @@ class player_dealer:
         self.score_checker()
         if self.score ==21:
             return 1 
+        return 0
+
+#a deal function
+
+    def deal (self):
+        self.cards.extend(self.deck.draw(2))
+        self.score_checker()
+        if self.score == 21:
+            return 1
         return 0

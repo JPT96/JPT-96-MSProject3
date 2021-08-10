@@ -82,3 +82,11 @@ class player_dealer:
             ace_counter -=1
             self.score -=10
         return self.score    
+    
+    def reveal(self):
+        if self.dealer:
+            print("Dealers Cards")
+        else:
+            print("Players Cards")
+        for i in self.cards:
+            i.show()

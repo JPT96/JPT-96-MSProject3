@@ -106,5 +106,11 @@ class the_game():
     def round(self):
         player_status = self.player.deal()
         dealer_status = self.dealer.deal()
+        self.player.show()
+        if player_status ==1:
+            print("Player got Black Jack WOW!")
+        if dealer_status ==1:
+            print("IT'S A BLACK JACK DRAW!!!")
+        return 1
         
                     

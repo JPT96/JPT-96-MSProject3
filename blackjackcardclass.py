@@ -12,3 +12,7 @@ class card:
         print('|       |')
         print(f'|    {self.value:>2} |')
         print('└───────┘') 
+    
+    def cost (self):
+        if self.price >= 10 :
+            return 10

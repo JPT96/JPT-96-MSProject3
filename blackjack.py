@@ -40,3 +40,5 @@ class card:
 
         def counter(self):
             return len(self.cards)
+
+        

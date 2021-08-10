@@ -23,5 +23,9 @@ class card:
     class deck:
         def __init__ (self):
             self.cards = []
-
+        
+        def full_deck(self):
+            for i in range(1,14):
+                for x in range(4):
+                    self.cards.append(card(i,x))
         

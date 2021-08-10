@@ -19,3 +19,9 @@ class card:
         elif self.price == 1:
            return 11
         return self.price 
+
+    class deck:
+        def __init__ (self):
+            self.cards = []
+
+        

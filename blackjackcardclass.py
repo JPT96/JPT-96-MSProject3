@@ -33,9 +33,10 @@ class card:
 
         def draw (self,iteration):
             cards = []
-            for i in  range(iteration):
+            for i in range(iteration):
                 card = random.choice(self.cards)
                 self.cards.remove(card)
                 cards.append(card)
 
-        
+        def counter(self):
+            return len(self.cards)

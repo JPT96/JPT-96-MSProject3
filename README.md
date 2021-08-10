@@ -1,18 +1,16 @@
-# JPT-96-MSProject3(Sink the Sub)
+# JPT-96-MSProject3(Black Jack)
 
 ## About
-For my Python project I decided to go with a very simple version of battleships. Which I call sink the sub.
+For my Python project I decided to go with a very simple version of blackJack game.
 
 
 ## Features
-This game cycles through 4 Turns to find this one submarine. 
+This game has cards designed and has a simple hit or hold function and will keep going till you hit 21.
 ## design
-The design is very basic it sits within five lists essentially filled with O's that turn into an X when shot at.
-there has been code put in to determine wether it was a hit, miss, off the board, or already been shot at the same locaation.
+the design of the cards is used with print statements using | and - to for the bases of a card whilst calling f prints to print the value of said card.
 
 ### Future Features
-I would like the player to put down Boats and be able to play between two players. Potentially an AI function so you can see two ai's fighting it out.
-being able to create your own custome boats would be a nice update as well.
+I would like to add currency (not real) to make it feel like your gambling for more immersion in this game.
 ## Technologies used
 [python3]<https://en.wikipedia.org/wiki/Python_(programming_language)>
 ## Testing

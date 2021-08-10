@@ -1,5 +1,5 @@
 import random
-
+#card making process
 class card:
     def __init__(self,value,suit):
         self.price = value
@@ -21,7 +21,7 @@ class card:
         elif self.price == 1:
            return 11
         return self.price 
-
+#deck making process
     class deck:
         def __init__ (self):
             self.cards = []
@@ -41,4 +41,12 @@ class card:
         def counter(self):
             return len(self.cards)
 
+# player/dealer making process
+
+class player_dealer:
+    def __init__(self,dealer,deck):
+        self.cards = []
+        self.dealer = dealer
+        self.deck = deck
+        self.score = 0 
         

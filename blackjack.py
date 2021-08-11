@@ -127,5 +127,9 @@ class the_game():
                 self.dealer.show()
                 print("Dealer Bust. I guess he wasn't cheating after all. You win!")
                 return 1
-            self.dealer.show()    
+            self.dealer.show() 
+
+        if self.dealer.score_checker() == self.player.score_checker():
+            print("It's a tie, Dealer wins by default")
+               
 

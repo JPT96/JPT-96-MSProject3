@@ -131,5 +131,8 @@ class the_game():
 
         if self.dealer.score_checker() == self.player.score_checker():
             print("It's a tie, Dealer wins by default")
-               
+        elif self.dealer.score_checker() > self.player.score_checker():
+            print("dealer wins. Is it rigged?")
+        elif self.player.score_checker() > self.dealer.score_checker():
+            print("You did it You won! Take your win and run")      
 

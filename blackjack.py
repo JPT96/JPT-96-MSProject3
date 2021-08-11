@@ -118,3 +118,7 @@ class the_game():
             return 1
         print("\n")
         self.dealer.show()
+        if dealer_status == 1:
+            print ("The Dealer got BlackJack. Is he cheating?")
+            return 1
+            

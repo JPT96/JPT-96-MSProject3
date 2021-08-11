@@ -1,48 +1,50 @@
 import random
-#card making process
+
+
 class card:
-    def __init__(self,value,suit):
+    def __init__(self, value, suit):
         self.price = value
-        self.value = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"][value -1]
-        self.suit = "♥♦♠♣" [suit]
-    
-    def card (self):
+        self.value = ['A', '2', '3', '4', '5', '6',
+                      '7', '8', '9', '10', 'J', 'Q', 'K'][value-1]
+        self.suit = '♥♦♣♠'[suit]
+
+    def show(self):
         print('┌───────┐')
         print(f'| {self.value:<2}    |')
         print('|       |')
         print(f'|   {self.suit}   |')
         print('|       |')
         print(f'|    {self.value:>2} |')
-        print('└───────┘') 
-    
-    def cost (self):
-        if self.price >= 10 :
+        print('└───────┘')
+
+    def cost(self):
+        if self.price >= 10:
             return 10
         elif self.price == 1:
-           return 11
-        return self.price 
-#deck making process
-class deck:
+            return 11
+        return self.price
 
-    def __init__ (self):
+
+class Deck:
+    def __init__(self):
         self.cards = []
-        
-    def full_deck(self):
-        for i in range(1,14):
-            for x in range(4):
-                self.cards.append(card(i,x))
 
-    def draw (self,iteration):
+    def full_deck(self):
+        for i in range(1, 14):
+            for j in range(4):
+                self.cards.append(card(i, j))
+
+    def draw(self, iteration):
         cards = []
         for i in range(iteration):
             card = random.choice(self.cards)
             self.cards.remove(card)
             cards.append(card)
+        return cards
 
-    def counter(self):
+    def count(self):
         return len(self.cards)
 
-# player/dealer making process
 
 class player_dealer:
     def __init__(self, dealer, deck):
@@ -66,15 +68,15 @@ class player_dealer:
         return 0
 
     def score_checker(self):
-        a_counter = 0
+        ace_counter = 0
         self.score = 0
         for card in self.cards:
-            if card.price() == 11:
-                a_counter += 1
-            self.score += card.price()
+            if card.cost() == 11:
+                ace_counter += 1
+            self.score += card.cost()
 
-        while a_counter != 0 and self.score > 21:
-            a_counter -= 1
+        while ace_counter != 0 and self.score > 21:
+            ace_counter -= 1
             self.score -= 10
         return self.score
 
@@ -90,36 +92,40 @@ class player_dealer:
         print("Score: " + str(self.score))
 
 
-class the_game():
+class The_game:
     def __init__(self):
-        self.deck = deck()
+        self.deck = Deck()
         self.deck.full_deck()
-        self.dealer = player_dealer(True, self.deck)
         self.player = player_dealer(False, self.deck)
-    
+        self.dealer = player_dealer(True, self.deck)
+
     def round(self):
-        player_status = self.player.deal()
-        dealer_status = self.dealer.deal()
+        p_status = self.player.deal()
+        d_status = self.dealer.deal()
+
         self.player.show()
-        if player_status ==1:
-            print("Player got Black Jack WOW!")
-            if dealer_status ==1:
-                print("IT'S A BLACK JACK DRAW!!!")
+
+        if p_status == 1:
+            print("Player got Blackjack! Congrats!")
+            if d_status == 1:
+                print("Dealer and Player got Blackjack! It's a push. (Tie)")
             return 1
+
         command = ""
         while command != "Hold":
             bust = 0
-            command = input("Hit or Hold")
-        if command =="Hit":
-            bust = self.player.hit()  
-            self.player.show() 
-        if bust ==1:
-            print("You Busted, You're flat Broke!")
-            return 1
+            command = input("Hit or Hold? ")
+
+            if command == "Hit":
+                bust = self.player.hit()
+                self.player.show()
+            if bust == 1:
+                print("Player Busted, You're flat Broke!")
+                return 1
         print("\n")
         self.dealer.show()
-        if dealer_status == 1:
-            print ("The Dealer got BlackJack. Is he cheating?")
+        if d_status == 1:
+            print("The Dealer got BlackJack. Is he cheating?")
             return 1
 
         while self.dealer.score_checker() < 17:
@@ -127,15 +133,15 @@ class the_game():
                 self.dealer.show()
                 print("Dealer Bust. I guess he wasn't cheating after all. You win!")
                 return 1
-            self.dealer.show() 
+            self.dealer.show()
 
         if self.dealer.score_checker() == self.player.score_checker():
             print("It's a tie, Dealer wins by default")
         elif self.dealer.score_checker() > self.player.score_checker():
             print("dealer wins. Is it rigged?")
-        elif self.player.score_checker() > self.dealer.score_checker():
-            print("You did it You won! Take your win and run")  
+        elif self.dealer.score_checker() < self.player.score_checker():
+            print("You did it You won! Take your win and run")
 
-b = the_game()
-b.round()    
 
+b = The_game()
+b.round()

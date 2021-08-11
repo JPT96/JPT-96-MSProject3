@@ -45,9 +45,9 @@ class deck:
 # player/dealer making process
 
 class player_dealer:
-    def __init__(self, isDealer, deck):
+    def __init__(self, dealer, deck):
         self.cards = []
-        self.isDealer = isDealer
+        self.dealer = dealer
         self.deck = deck
         self.score = 0
 
@@ -79,7 +79,7 @@ class player_dealer:
         return self.score
 
     def show(self):
-        if self.isDealer:
+        if self.dealer:
             print("Dealer's Cards")
         else:
             print("Player's Cards")
@@ -103,8 +103,12 @@ class the_game():
         self.player.show()
         if player_status ==1:
             print("Player got Black Jack WOW!")
-        if dealer_status ==1:
-            print("IT'S A BLACK JACK DRAW!!!")
-        return 1
+            if dealer_status ==1:
+                print("IT'S A BLACK JACK DRAW!!!")
+            return 1
+        command = ""
+        while command != "Hold":
+            bust = 0
+            command = input("Hit or Hold")
+            
 
-                    

@@ -134,5 +134,8 @@ class the_game():
         elif self.dealer.score_checker() > self.player.score_checker():
             print("dealer wins. Is it rigged?")
         elif self.player.score_checker() > self.dealer.score_checker():
-            print("You did it You won! Take your win and run")      
+            print("You did it You won! Take your win and run")  
+
+b = the_game()
+b.round()    
 

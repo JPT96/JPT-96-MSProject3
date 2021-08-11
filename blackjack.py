@@ -113,4 +113,7 @@ class the_game():
         if command =="Hit":
             bust = self.player.hit()  
             self.player.show() 
+        if bust ==1:
+            print("You Busted, You're flat Broke!")
+            return 1
 

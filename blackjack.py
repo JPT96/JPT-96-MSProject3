@@ -116,4 +116,5 @@ class the_game():
         if bust ==1:
             print("You Busted, You're flat Broke!")
             return 1
-
+        print("\n")
+        self.dealer.show()

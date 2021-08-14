@@ -68,7 +68,7 @@ My naming convetions could of been cleaner there are some basic issues like nami
 Which actually caused the project to not work for a day or two because I couldn't understand the errors that were occuring.
 
 ## Deployment 
-### publishing
+### Publishing
  1. Go to the GitHub website and log in.
  2. On the left-hand side, you'll see all your repositories, select the appropriate one. (Repository used for this project).
  3. Under the name of your chosen Repository you will see a ribbon of selections, click on 'Settings' located on the right hand side.
